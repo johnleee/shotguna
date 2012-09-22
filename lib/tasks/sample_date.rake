@@ -43,7 +43,7 @@ def make_activities
     name = "Lake Merced Loop"
     distance = 6
     date = Time.now
-    time = 3600
+    time = 54
     users.each { |user| user.activities.create!(name: name, distance: distance, date: date, time: time) }
   end
 end

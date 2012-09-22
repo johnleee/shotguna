@@ -1,0 +1,20 @@
+<%= form_for(@activity) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Enter activity name..." %>
+    </div>
+    <div class="field">
+      <%= f.label :date %>
+      <%= f.date_select :date %>
+    </div>
+    <div class="field">
+      <%= f.label :time %>
+      <%= f.text_field :time, placeholder: "Enter time..." %>
+    </div>
+    <div class="field">
+      <%= f.label :distance %>
+      <%= f.text_field :distance, placeholder: "Enter distance..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

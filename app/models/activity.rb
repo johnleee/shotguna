@@ -7,4 +7,8 @@ class Activity < ActiveRecord::Base
   validates :distance, presence: true, length: { maximum: 3 }
 
   default_scope order: 'activities.created_at DESC'
+
+  def pace
+    time.to_f / distance.to_f
+  end
 end

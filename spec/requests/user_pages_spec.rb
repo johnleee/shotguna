@@ -239,4 +239,18 @@ describe "User pages" do
       it { should have_link(user.name, href: user_path(user)) }
     end
   end
+
+  describe "activities" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit activities_path
+    end
+
+    describe "page" do
+      it { should have_selector('h3',    text: "Activities Log") }
+      it { should have_selector('title', text: "Activities Log") }
+    end
+
+  end
 end

@@ -109,6 +109,11 @@ describe "Authentication" do
           before { visit followers_user_path(user) }
           it { should have_selector('title', text: 'Sign in') }
         end
+
+        describe "visiting the activities index" do
+          before { visit activities_path }
+          it { should have_selector('title', text: 'Sign in') }
+        end
       end
 
       describe "in the Microposts controller" do
@@ -120,6 +125,19 @@ describe "Authentication" do
 
         describe "submitting to the destroy action" do
           before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
+
+      describe "in the Activities controller" do
+
+        describe "submitting to the create action" do
+          before { post activities_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete activity_path(FactoryGirl.create(:activity)) }
           specify { response.should redirect_to(signin_path) }
         end
       end
