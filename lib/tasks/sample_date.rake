@@ -4,6 +4,7 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_activities
   end
 end
 
@@ -13,7 +14,7 @@ def make_users
                        password: "foobar1",
                        password_confirmation: "foobar1")
   admin.toggle!(:admin)
-  User.create!(name:     "Newton Running",
+  User.create!(name:     "Netwon Run",
                email:    "dabuda@gmail.com",
                password: "foobar1",
                password_confirmation: "foobar1")
@@ -33,6 +34,17 @@ def make_microposts
   50.times do
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
+  end
+end
+
+def make_activities
+  users = User.all(limit: 4)
+  10.times do
+    name = "Lake Merced Loop"
+    distance = 6
+    date = Time.now
+    time = 3600
+    users.each { |user| user.activities.create!(name: name, distance: distance, date: date, time: time) }
   end
 end
 
