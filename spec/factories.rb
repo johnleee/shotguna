@@ -14,4 +14,10 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :activity do
+    name "Lake Merced Loop"
+    distance 6
+    user
+  end
 end
