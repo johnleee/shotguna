@@ -19,21 +19,57 @@
 <% else %>
     <div class="center hero-unit">
       <h1>Welcome to Hashiru</h1>
-
       <h2>
-        This is the home page for the
-        <a href="http://hashiru.herokuapp.com">Hashiru</a>
-        application.
-      </h2>
-      <h2>
-        The verb hashi-ru means run. Hashi-ru is used in simple sentences such as, “watashi wa hashiru,” meaning, “I run.” Watashi wa means I.
+        The verb hashi-ru means run in Japanese. Hashi-ru is used in simple sentences such as, “watashi wa hashiru,” meaning, “I run.” Watashi wa means I.
       </h2>
 
       <%= link_to "Sign up now!", signup_path,
                   class: "btn btn-large btn-primary" %>
     </div>
 
-    <%= link_to image_tag("torun.jpg", alt: "To Run"), 'http://hashiru.herokuapp.com' %>
-    <%= link_to image_tag("torun.jpg", alt: "To Run"), 'http://hashiru.herokuapp.com' %>
-    <%= link_to image_tag("torun.jpg", alt: "To Run"), 'http://hashiru.herokuapp.com' %>
+  <div class="container" >
+    <div class="span12">
+    <ul class="thumbnails">
+      <li class="span4">
+        <a href="#" class="thumbnail">
+          <img src="http://learn2peak.files.wordpress.com/2011/06/lady-running.jpg" alt="To Run">
+        </a>
+      </li>
+      <li class="span3">
+        <div class="thumbnail">
+          <img src="http://calligraphernao.files.wordpress.com/2010/01/torun.jpg" alt="To Run">
+          <p>Hashiru Kanji</p>
+        </div>
+      </li>
+      <li class="span4">
+        <a href="#" class="thumbnail">
+          <img src="http://www.coasthillsrunningclub.com/images/header2.jpg" alt="To Run">
+        </a>
+      </li>
+    </ul>
+    </div>
+
+    <div class="span12">
+    <ul class="thumbnails">
+      <li class="span4">
+        <div class="thumbnail">
+          <img src="http://img.thesun.co.uk/multimedia/archive/00467/SNF12TRAVFX2682_467958a.jpg" alt="To Run">
+          <p>Beijing Marathon</p>
+        </div>
+      </li>
+      <li class="span4">
+        <div class="thumbnail">
+          <img src="http://runninginspired.files.wordpress.com/2011/05/new-york-city-marathon.gif?w=600&h=398" alt="To Run">
+          <p>New York City Marathon</p>
+        </div>
+      </li>
+      <li class="span3">
+        <div class="thumbnail">
+          <img src="http://www.hawaiimagazine.com/images/content/Honolulu_Marathon_off_running_Sunday/HonoluluMarathon.jpg" alt="To Run">
+          <p>Honolulu Marathon</p>
+        </div>
+      </li>
+    </ul>
+    </div>
+  </div>
 <% end %> 
