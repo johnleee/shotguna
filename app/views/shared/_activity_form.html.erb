@@ -10,11 +10,16 @@
     </div>
     <div class="field">
       <%= f.label :time %>
-      <%= f.text_field :time, placeholder: "Enter time..." %>
+      <%= f.text_field :time, placeholder: "Enter time...", class: "input-medium" %>
     </div>
     <div class="field">
       <%= f.label :distance %>
-      <%= f.text_field :distance, placeholder: "Enter distance..." %>
+      <%= f.text_field :distance, placeholder: "Enter distance...", class: "input-medium" %>
     </div>
-    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+
+    <%= f.fields_for :address do |address| %>
+        <%= render :partial => 'shared/address', :locals => {:f => address} %>
+    <% end %>
+
+    <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
 <% end %>

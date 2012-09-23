@@ -2,12 +2,17 @@ class ActivitiesController < ApplicationController
   before_filter :signed_in_user,
                 only: [:index, :create, :destroy]
 
+  respond_to :html, :json, :xml
+
   def index
     if signed_in?
       @activities = current_user.activities.paginate(page: params[:page])
+      @activity = current_user.activities.build
+      @activity.build_address
     end
     @all_activities = Activity.paginate(page: params[:page], per_page: 30)
-    @activity = current_user.activities.build if signed_in?
+
+    respond_with @activities
   end
 
   def create

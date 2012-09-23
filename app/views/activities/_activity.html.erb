@@ -1,6 +1,13 @@
 <li>
   <span class="content"><%= activity.name %>:  <%= activity.time %> minutes
-     <%= activity.distance %> miles (<%= activity.pace %> minutes per mile) </span>
+     <%= activity.distance %> miles (<%= number_with_precision(activity.pace, :precision => 2) %> minutes per mile)
+  </span>
+  <% if activity.address %>
+    <span>
+      <%= activity.address.line1 %>  <%= activity.address.city %>
+      <%= activity.address.state %>  <%= activity.address.zip %>
+    </span>
+  <% end %>
   <span class="timestamp">
     Posted <%= time_ago_in_words(activity.created_at) %> ago.
   </span>

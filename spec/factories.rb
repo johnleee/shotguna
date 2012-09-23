@@ -18,6 +18,7 @@ FactoryGirl.define do
   factory :activity do
     name "Lake Merced Loop"
     distance 6
+    time 42
     user
   end
 end

@@ -1,10 +1,14 @@
 class Activity < ActiveRecord::Base
-  attr_accessible :activity_type_id, :date, :distance, :name, :time
+  has_one :address, :as => :addressable
+  accepts_nested_attributes_for :address
+
+  attr_accessible :activity_type_id, :date, :distance, :name, :time, :address_attributes
   belongs_to :user
 
   validates :user_id, presence: true
   validates :name, presence: true, length: { maximum: 50 }
   validates :distance, presence: true, length: { maximum: 3 }
+  validates :time, presence: true, length: { maximum: 3 }
 
   default_scope order: 'activities.created_at DESC'
 

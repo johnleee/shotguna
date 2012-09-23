@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Activity do
   let(:user) { FactoryGirl.create(:user) }
-  before { @activity = user.activities.build(name: "Lake Merced Loop", distance: 6, time: 3600,
-                                             date: Time.now, activity_type_id: 1) }
+  before { @activity = user.activities.build(name: "Lake Merced Loop", distance: 6, time: 36,
+      date: Time.now, activity_type_id: 1, address_attributes: {city: "SF", state:"CA", zip:"94132"} ) }
 
   subject { @activity }
 
