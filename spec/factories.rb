@@ -21,4 +21,14 @@ FactoryGirl.define do
     time 42
     user
   end
+
+  factory :feed_entry do
+    guid "http://sportsdoc.runnersworld.com/2012/09/how-can-i-overcome-persistent-asthma.html"
+    name "Ask the Sports Doc"
+    published_at Time.now
+    summary "My question is ?"
+    url "http://www.google.com"
+  end
+
+
 end

@@ -44,7 +44,9 @@ def make_activities
     distance = 6
     date = Time.now
     time = 54
-    users.each { |user| user.activities.create!(name: name, distance: distance, date: date, time: time) }
+    address = { city: "San Francisco", state: "CA", zip: "94132"}
+    users.each { |user| user.activities.create!(name: name,
+        distance: distance, date: date, time: time, address_attributes: address) }
   end
 end
 
