@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span5">
     <section>
       <h1>
         <%= gravatar_for @user %>
@@ -10,8 +10,16 @@
     <section>
       <%= render 'shared/stats' %>
     </section>
+    <section>
+      <h3>Recent Running Articles</h3><br/>
+      <ul>
+        <% for entry in FeedEntry.all(:limit => 30, :order => "published_at desc") %>
+            <li><%= link_to h(entry.name), entry.url, :target => '_blank'%></li>
+        <% end %>
+      </ul>
+    </section>
   </aside>
-  <div class="span8">
+  <div class="span7">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
         <h3>Microposts (<%= @user.microposts.count %>)</h3>

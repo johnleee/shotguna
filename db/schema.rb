@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923042934) do
+ActiveRecord::Schema.define(:version => 20120924012521) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_type_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20120923042934) do
   end
 
   add_index "addresses", ["addressable_type", "addressable_id"], :name => "index_addresses_on_addressable_type_and_addressable_id", :unique => true
+
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "microposts", :force => true do |t|
     t.string   "content"

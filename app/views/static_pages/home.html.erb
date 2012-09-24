@@ -1,6 +1,6 @@
 <% if signed_in? %>
     <div class="row">
-      <aside class="span4">
+      <aside class="span5">
         <section>
           <%= render 'shared/user_info' %>
         </section>
@@ -10,8 +10,16 @@
         <section>
           <%= render 'shared/micropost_form' %>
         </section>
+        <section>
+          <h3>Recent Running Articles</h3> <br/>
+          <ul>
+            <% for entry in FeedEntry.all(:limit => 30, :order => "published_at desc") %>
+                <li><%= link_to h(entry.name), entry.url, :target => '_blank' %></li>
+            <% end %>
+          </ul>
+        </section>
       </aside>
-      <div class="span8">
+      <div class="span7">
         <h3>Micropost Feed</h3>
         <%= render 'shared/feed' %>
       </div>
@@ -48,6 +56,7 @@
       </li>
     </ul>
     </div>
+
 
     <!--
     <div class="span12">
