@@ -25,12 +25,29 @@
       </div>
     </div>
 <% else %>
+    <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Please take our survey!", root_path, id: "logo" %>
+    </div>
+    </div>
+
     <div class="center hero-unit">
       <h1>Welcome to Shotgun Analytics</h1>
       <h2>
-        Please take a look around.
+        Shotgun Analytics is a team of Carnegie Mellon University Silicon Valley students that
+        share a love of shooting and technology. We are building a revolutionary mobile app
+        that will improve your shooting, and will be easy, fast and fun to use.
       </h2>
-
+      <h2>
+        We need your help! We want to make our app useful to people like you. We want to talk
+        to people like you! Contributors will be considered for participation in our exclusive
+        Beta testing program, which means you’ll have early access to our experimental,
+        proprietary technology. Email <%= mail_to "research@shotgunanalytics.org" %> and
+        someone on our team will get in touch with you shortly.
+      </h2>
+      <h2>
+        You can find out more about us <%= link_to "here",   about_path %>.
+      </h2>
 
       <%#= link_to "Sign up now!", signup_path,
                   class: "btn btn-large btn-primary" %>
@@ -64,30 +81,5 @@
     </ul>
     </div>
 
-
-    <!--
-    <div class="span12">
-    <ul class="thumbnails">
-      <li class="span4">
-        <div class="thumbnail">
-          <img src="http://img.thesun.co.uk/multimedia/archive/00467/SNF12TRAVFX2682_467958a.jpg" alt="To Run">
-          <p>Beijing Marathon</p>
-        </div>
-      </li>
-      <li class="span4">
-        <div class="thumbnail">
-          <img src="http://runninginspired.files.wordpress.com/2011/05/new-york-city-marathon.gif?w=600&h=398" alt="To Run">
-          <p>New York City Marathon</p>
-        </div>
-      </li>
-      <li class="span3">
-        <div class="thumbnail">
-          <img src="http://www.hawaiimagazine.com/images/content/Honolulu_Marathon_off_running_Sunday/HonoluluMarathon.jpg" alt="To Run">
-          <p>Honolulu Marathon</p>
-        </div>
-      </li>
-    </ul>
-    </div>
-    -->
   </div>
 <% end %> 
